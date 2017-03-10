@@ -35,8 +35,8 @@ module.exports.dst = function(table) {
         'sortFunction': function (index, rows) {
             var self = this;
             rows = rows.sort(function (a, b) {
-                var ACellAtDex = a.children[index];
-                var BCellAtDex = b.children[index];
+                var ACellAtDex = a.children[index] || {'innerText': ''};
+                var BCellAtDex = b.children[index] || {'innerText': ''};
                 if (ACellAtDex && BCellAtDex) {
                     var aText = Number(ACellAtDex.innerText) || ACellAtDex.innerText === '0' ? Number(ACellAtDex.innerHTML) : ACellAtDex.innerHTML;
                     var bText = Number(BCellAtDex.innerText) || BCellAtDex.innerText === '0' ? Number(BCellAtDex.innerHTML) : BCellAtDex.innerHTML;
