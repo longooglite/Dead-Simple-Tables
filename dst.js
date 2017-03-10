@@ -1,4 +1,4 @@
-module.exports.dst = function(table) {
+var dst = function(table) {
     var rows = table.querySelectorAll('tbody tr').length ? [].slice.call(table.querySelectorAll('tbody tr')) : [];
     var headerRow = table.querySelector('thead tr');
     var headers = headerRow.querySelectorAll('thead tr th');
